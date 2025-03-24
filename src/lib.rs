@@ -1,2 +1,2 @@
 pub mod accumfft;
-pub mod ema;
+pub mod sma;

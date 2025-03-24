@@ -1,11 +1,11 @@
-pub struct EMA {
+pub struct SMA {
     alpha: f32,
     value: f32,
 }
 
-impl EMA {
+impl SMA {
     pub fn new(alpha: f32) -> Self {
-        EMA {
+        SMA {
             alpha,
             value: 0.0,
         }
@@ -30,7 +30,7 @@ mod ema_tests {
 
     #[test]
     fn ema() {
-        let mut ema = EMA::new(0.5);
+        let mut ema = SMA::new(0.5);
         ema.feed(1.0);
         assert_eq!(ema.value(), 0.5);
         ema.feed(2.0);
@@ -41,7 +41,7 @@ mod ema_tests {
 
     #[test]
     fn resetable() {
-        let mut ema = EMA::new(0.5);
+        let mut ema = SMA::new(0.5);
         ema.feed(1.0);
         assert_eq!(ema.value(), 0.5);
         ema.reset();
